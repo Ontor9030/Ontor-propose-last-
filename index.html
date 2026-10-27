@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ontor Propose</title>
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: url('pp.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-top: 50px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 100px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      cursor: none;
+      border: none;
+      border-radius: 30px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    #yes {
+      background-color: #28a745;
+      color: white;
+    }
+    #yes:hover {
+      background-color: #218838;
+      transform: scale(1.1);
+    }
+    #no {
+      background-color: #dc3545;
+      color: white;
+    }
+    #no:hover {
+      background-color: #c82333;
+      transform: scale(1.1);
+    }
+    .footer {
+      margin-top: 50px;
+      font-size: 1rem;
+      color: #f1f1f1;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    .footer a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .ziam-style {
+      font-size: 2rem;
+      color: #FFD700;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      font-weight: bold;
+      font-style: italic;
+      border: 2px solid #ff4757;
+      padding: 5px 10px;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #ff4757, #ffd700);
+    }
+  </style>
+</head>
+<body>
+  <h1>Do You Love Me? 🥰</h1>
+  <div class="button-container">
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <div class="footer">
+    <h2>Proposed by <span class="ziam-style">Ontor</span></h2>
+    
+  </div>
+
+  <script>
+    const pointer = document.getElementById("pointer");
+    const noButton = document.getElementById("no");
+
+    document.addEventListener("mousemove", (e) => {
+      pointer.style.left = `${e.pageX}px`;
+      pointer.style.top = `${e.pageY}px`;
+    });
+
+    noButton.addEventListener("mouseover", moveNoButton);
+    noButton.addEventListener("touchstart", moveNoButton);
+
+    function moveNoButton() {
+      const maxX = window.innerWidth - noButton.offsetWidth;
+      const maxY = window.innerHeight - noButton.offsetHeight;
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+      noButton.style.position = "absolute";
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+    }
+
+    document.getElementById("yes").addEventListener("click", () => {
+      alert("I Love You Too 🥰🥰🥰 and I knew it! 🥰🥰🥰");
+    });
+
+    noButton.addEventListener("click", () => {
+      alert("You can't say no! 😜");
+    });
+  </script>
+</body>
+</html>
